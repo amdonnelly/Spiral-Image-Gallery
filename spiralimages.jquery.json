@@ -1,0 +1,39 @@
+{
+"name": "spiralimages",
+"title": "jQuery Spiral Image",
+"description": "jQuery plugin generating a spiral image gallery.",
+"keywords": [
+"image",
+"gallery",
+"jquery",
+"javascript",
+"plugin",
+"show",
+"slideshow",
+"spiral"
+],
+"version": "0.5",
+"author": {
+"name": "Alan Donnelly",
+"url": "http://www.amdonnelly.o.uk"
+},
+"maintainers": [
+{
+"name": "Alan Donnelly",
+"email": "amdonnelly@gmail.com",
+"url": "http://www.amdonnelly.o.uk"
+}
+],
+"licenses": [
+{
+"type": "MIT",
+"url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+}
+],
+"homepage": "http://www.amdonnelly.co.uk/experiments/spiral-gallery-plugin.aspx",
+"docs": "http://www.amdonnelly.co.uk/experiments/spiral-gallery-plugin.aspx",
+"download": "https://github.com/amdonnelly/Spiral-Image-Gallery",
+"dependencies": {
+"jquery": ">=1.6"
+}
+}
