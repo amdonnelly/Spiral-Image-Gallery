@@ -1,13 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!doctype html>
+<!--[if IE 7]><html lang="en" class="ie7"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if gt IE 9]><html lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
+<head>
+
+     <title></title>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js" ></script>
-    <script type="text/javascript" src="kinetic.js" ></script>
-    <script type="text/javascript" src="jquery.spiralimages-0.5.min.js"></script>
+    <script type="text/javascript" src="scripts/kinetic.js" ></script>
+
+    <script type="text/javascript" src="scripts/jquery.spiralimages-0.5.min.js"></script>
     <style type="text/css">
+        <!--
         #container 
         {
             width:500px;
@@ -35,11 +42,11 @@
             text-indent:200px;
             overflow:hidden;
         } 
-        #spiral-controls #first {background-image: url(images//btn_first.png) }
-        #spiral-controls #prev {background-image: url(images//btn_prev.png) }
-        #spiral-controls #next {background-image: url(images//btn_next.png) }
-        #spiral-controls #last {background-image: url(images//btn_last.png) }
-        #spiral-controls #stop {background-image: url(images//btn_stop.png) }
+        #spiral-controls #first {background-image: url(/images/SpiralImages/btn_first.png) }
+        #spiral-controls #prev {background-image: url(/images/SpiralImages/btn_prev.png) }
+        #spiral-controls #next {background-image: url(/images/SpiralImages/btn_next.png) }
+        #spiral-controls #last {background-image: url(/images/SpiralImages/btn_last.png) }
+        #spiral-controls #stop {background-image: url(/images/SpiralImages/btn_stop.png) }
             
         /* ================================================================================== */
         /* ================================================================================== */
@@ -78,7 +85,7 @@
         }           
         .spiral-pop-up .inner.loading 
         {
-            background: #ffffff url(images//loading.gif) no-repeat 50% 50%;
+            background: #ffffff url(/images/SpiralImages/loading.gif) no-repeat 50% 50%;
         }   
             
         .spiral-pop-up .close 
@@ -87,39 +94,40 @@
             position:absolute;
             width:20px;
             height:20px;
-            background: transparent url(images//btn_close.png) no-repeat 0 0;
+            background: transparent url(/images/SpiralImages/btn_close.png) no-repeat 0 0;
             cursor:pointer;
         }
         .spiral-pop-up .nav{position:absolute;width:100%;left:0px;} 
         .spiral-pop-up .nav .btn{} 
-        .spiral-pop-up .nav .btn.prev{background: transparent url(images//btn_last_item.png) no-repeat; width: 30px; height:30px;cursor: pointer; float:left; margin-left: -15px;} 
-        .spiral-pop-up .nav .btn.next{background: transparent url(images//btn_next_item.png) no-repeat; width: 30px; height:30px;cursor: pointer; float:right; margin-right: -15px;} 
+        .spiral-pop-up .nav .btn.prev{background: transparent url(/images/SpiralImages/btn_last_item.png) no-repeat; width: 30px; height:30px;cursor: pointer; float:left; margin-left: -15px;} 
+        .spiral-pop-up .nav .btn.next{background: transparent url(/images/SpiralImages/btn_next_item.png) no-repeat; width: 30px; height:30px;cursor: pointer; float:right; margin-right: -15px;} 
               
         .spiral-pop-up .inner .media 
         {
             float:left;
             position:relative;
         }    
+        
+        
+        
+    
+        -->
     </style>
-
-     <script type="text/javascript">
-         $(function () {
-             $(function () {
-                 $("#lists").SpiralImages({ options: { rotateImages: true, useModal: true} });
-             });
-
-             $("a#next").click(function () { $("#lists").SpiralImages.MoveNext(); return false; });
-             $("a#prev").click(function () { $("#lists").SpiralImages.MovePrev(); return false; });
-             $("a#stop").click(function () { $("#lists").SpiralImages.StopAnim(); return false; });
-             $("a#first").click(function () { $("#lists").SpiralImages.MoveFirst(); return false; });
-             $("a#last").click(function () { $("#lists").SpiralImages.MoveLast(); return false; });
-         });
-    </script>
 </head>
 <body>
-
+       <script type="text/javascript">
+           $(function () {
+               $("#lists").SpiralImages({ options: { rotateImages: true, useModal: true} });
+               
+               $("a#next").click(function () { $("#lists").SpiralImages.MoveNext(); return false; });
+               $("a#prev").click(function () { $("#lists").SpiralImages.MovePrev(); return false; });
+               $("a#stop").click(function () { $("#lists").SpiralImages.StopAnim(); return false; });
+               $("a#first").click(function () { $("#lists").SpiralImages.MoveFirst(); return false; });
+               $("a#last").click(function () { $("#lists").SpiralImages.MoveLast(); return false; });
+			   
+           });
+    </script>
        
-
 
     <div id="spiral-controls">
         <a href="" id="first" class="btn" title="First image">First</a>  
@@ -132,40 +140,39 @@
     <div id="container">
         <ul id="lists">
 
-            <li><img src="images//pics/200x300_thumb.jpg" class="1" spiral-media="images//pics/200x300.jpg"  /></li>
-            <li><img src="images//pics/150x150_thumb.jpg" class="1" spiral-media="images//pics/150x150.jpg"  /></li>
-            <li><img src="images//pics/200x200_thumb.jpg" class="1" spiral-media="images//pics/200x200.jpg"  /></li>
-            <li><img src="images//pics/200x425_thumb.jpg" class="1" spiral-media="images//pics/200x425.jpg"  /></li>          
-            <li><img src="images//pics/250x250_thumb.jpg" class="1" spiral-media="images//pics/250x250.jpg"  /></li>
-            <li><img src="images//pics/300x300_thumb.jpg" class="1" spiral-media="images//pics/300x300.jpg"  /></li>
-            <li><img src="images//pics/425x100_thumb.jpg" class="1" spiral-media="images//pics/425x100.jpg"  /></li>
-            <li><img src="images//pics/350x350_thumb.jpg" class="1" spiral-media="images//pics/350x350.jpg"  /></li>
-            <li><img src="images//pics/400x250_thumb.jpg" class="1" spiral-media="images//pics/400x250.jpg"  /></li>
-            <li><img src="images//pics/400x350_thumb.jpg" class="1" spiral-media="images//pics/400x350.jpg"  /></li>
-            <li><img src="images//pics/400x400_thumb.jpg" class="1" spiral-media="images//pics/400x400.jpg"  /></li>          
-            <li><img src="images//pics/425x200_thumb.jpg" class="1" spiral-media="images//pics/425x200.jpg"  /></li>
-            <li><img src="images//pics/450x450_thumb.jpg" class="1" spiral-media="images//pics/450x450.jpg"  /></li>
-            <li><img src="images//pics/500x500_thumb.jpg" class="1" spiral-media="images//pics/500x500.jpg"  /></li>
-            <li><img src="images//pics/600x600_thumb.jpg" class="1" spiral-media="images//pics/600x600.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x300_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x300.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/150x150_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/150x150.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x200_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x200.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x425_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x425.jpg"  /></li>          
+            <li><img src="/images/SpiralImages/pics/250x250_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/250x250.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/300x300_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/300x300.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/425x100_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/425x100.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/350x350_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/350x350.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x250_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x250.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x350_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x350.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x400_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x400.jpg"  /></li>          
+            <li><img src="/images/SpiralImages/pics/425x200_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/425x200.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/450x450_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/450x450.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/500x500_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/500x500.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/600x600_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/600x600.jpg"  /></li>
 
 
-            <li><img src="images//pics/200x300_thumb.jpg" class="1" spiral-media="images//pics/200x300.jpg"  /></li>
-            <li><img src="images//pics/150x150_thumb.jpg" class="1" spiral-media="images//pics/150x150.jpg"  /></li>
-            <li><img src="images//pics/200x200_thumb.jpg" class="1" spiral-media="images//pics/200x200.jpg"  /></li>
-            <li><img src="images//pics/200x425_thumb.jpg" class="1" spiral-media="images//pics/200x425.jpg"  /></li>          
-            <li><img src="images//pics/250x250_thumb.jpg" class="1" spiral-media="images//pics/250x250.jpg"  /></li>
-            <li><img src="images//pics/300x300_thumb.jpg" class="1" spiral-media="images//pics/300x300.jpg"  /></li>
-            <li><img src="images//pics/425x100_thumb.jpg" class="1" spiral-media="images//pics/425x100.jpg"  /></li>
-            <li><img src="images//pics/350x350_thumb.jpg" class="1" spiral-media="images//pics/350x350.jpg"  /></li>
-            <li><img src="images//pics/400x250_thumb.jpg" class="1" spiral-media="images//pics/400x250.jpg"  /></li>
-            <li><img src="images//pics/400x350_thumb.jpg" class="1" spiral-media="images//pics/400x350.jpg"  /></li>
-            <li><img src="images//pics/400x400_thumb.jpg" class="1" spiral-media="images//pics/400x400.jpg"  /></li>          
-            <li><img src="images//pics/425x200_thumb.jpg" class="1" spiral-media="images//pics/425x200.jpg"  /></li>
-            <li><img src="images//pics/450x450_thumb.jpg" class="1" spiral-media="images//pics/450x450.jpg"  /></li>
-            <li><img src="images//pics/500x500_thumb.jpg" class="1" spiral-media="images//pics/500x500.jpg"  /></li>
-            <li><img src="images//pics/600x600_thumb.jpg" class="1" spiral-media="images//pics/600x600.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x300_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x300.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/150x150_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/150x150.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x200_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x200.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/200x425_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/200x425.jpg"  /></li>          
+            <li><img src="/images/SpiralImages/pics/250x250_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/250x250.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/300x300_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/300x300.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/425x100_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/425x100.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/350x350_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/350x350.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x250_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x250.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x350_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x350.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/400x400_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/400x400.jpg"  /></li>          
+            <li><img src="/images/SpiralImages/pics/425x200_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/425x200.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/450x450_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/450x450.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/500x500_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/500x500.jpg"  /></li>
+            <li><img src="/images/SpiralImages/pics/600x600_thumb.jpg" class="1" data-spiral-media="/images/SpiralImages/pics/600x600.jpg"  /></li>
         </ul>
     </div>
-
 </body>
 </html>
