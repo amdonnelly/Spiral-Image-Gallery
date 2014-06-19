@@ -1,11 +1,9 @@
 #Jquery Spiral Image Plugin
----
 A plugin for generating an animated gallery with thumbnails displayed as a spiral.
 
 For an example visit [the demo page](http://www.amdonnelly.co.uk/experiments/spiral-gallery-plugin.aspx "Spiral Gallery Demo")
 
 ##Installation
----
 The plugin script must be loaded after jquery and kinect.js.
 
 ```html
@@ -15,7 +13,6 @@ The plugin script must be loaded after jquery and kinect.js.
 ```
 
 ##Example
----
 A very basic example without any options. 
 
 
@@ -28,7 +25,7 @@ For each image entry in the list, src is the thumbnail displayed in the spiral, 
         <li><img src="/images/200x300_thumb.jpg" data-spiral-media="/images/200x300.jpg"  /></li>
         <li><img src="/images/150x150_thumb.jpg" data-spiral-media="/images/150x150.jpg"  /></li>
         <li><img src="/images/200x200_thumb.jpg" data-spiral-media="/images/200x200.jpg"  /></li>
-	</ul>
+    </ul>
 </div>
 ```
 
@@ -42,7 +39,6 @@ The script replaces the contents of the containing object with a canvas element,
 
 
 ##Paramaters
----
 Optional paramaters with default values:
 ```javascript
 $("#list").SpiralImages({  
@@ -53,33 +49,32 @@ $("#list").SpiralImages({
 }); 
 ```
 ###options
-* **rotateImages**: rotate each thumbnail to align with the shape of the spiral
-* **useModal **: enable modal pop up when viewing images
+* __rotateImages__: rotate each thumbnail to align with the shape of the spiral
+* __useModal__: enable modal pop up when viewing images
 
 ###imageMod    
 Modify size/position of thumbnail images
-* **space**: space between each thumbnail
-* **opacity**: opacity increment 
-* **scale**: scale increment
-* **move**: amount to move images during animation (reduce value for slower animation)
+* __space__: space between each thumbnail
+* __opacity__: opacity increment 
+* __scale__: scale increment
+* __move__: amount to move images during animation (reduce value for slower animation)
  
 ###spiral 
 Modify size/shape/position of the spiral
-* **centerX **: horizontal offset for the center of the spiral
-* **centerY **: vertical offset for the center of the spiral
-* **radius **: specify the radius of the spiral, by default it's automatically determined to fit within the containing object.
-* **sides **: 
-* **coils **: 
-* **shrinkRadius **:reduce the final spiral radius 
+* __centerX__: horizontal offset for the center of the spiral
+* __centerY__: vertical offset for the center of the spiral
+* __radius__: specify the radius of the spiral, by default it's automatically determined to fit within the containing object.
+* __sides__: 
+* __coils__: 
+* __shrinkRadius__:reduce the final spiral radius 
    
 ###borders 
 Change the border size and color of thumbnail images
-* **normal **: default border
-* **hover **: mouseover border
-* **selected **: currently selected thumbnail 
+* __normal__: default border
+* __hover__: mouseover border
+* __selected__: currently selected thumbnail 
    
 ##Methods
----
 ```javascript
 $("#list").SpiralImages.MoveNext();     //Animate to and highlight the next image in the list.
 
